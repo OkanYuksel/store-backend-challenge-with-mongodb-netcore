@@ -1,0 +1,44 @@
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Store Backend Challenge.exe
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Store Backend Challenge.deps.json
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Store Backend Challenge.runtimeconfig.json
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Store Backend Challenge.runtimeconfig.dev.json
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Store Backend Challenge.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Store Backend Challenge.pdb
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\DnsClient.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\SharpCompress.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\runtimes\linux\native\libmongocrypt.so
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\runtimes\win\native\mongocrypt.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Store.Core.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Store.Core.pdb
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.csprojAssemblyReference.cache
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.AssemblyInfoInputs.cache
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.AssemblyInfo.cs
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.csproj.CoreCompileInputs.cache
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\staticwebassets\Store Backend Challenge.StaticWebAssets.Manifest.cache
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\staticwebassets\Store Backend Challenge.StaticWebAssets.xml
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\scopedcss\bundle\Store Backend Challenge.styles.css
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.RazorTargetAssemblyInfo.cache
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.csproj.CopyComplete
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.pdb
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.genruntimeconfig.cache
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\OKAN\source\repos\Store Backend Challenge\Store Backend Challenge\obj\Debug\netcoreapp3.1\Store Backend Challenge.MvcApplicationPartsAssemblyInfo.cs
