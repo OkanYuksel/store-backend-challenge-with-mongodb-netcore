@@ -1,20 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Store.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MediatR;
-using Store.API.MedCore.Queries;
 
 namespace Store_Backend_Challenge
 {
@@ -40,9 +32,8 @@ namespace Store_Backend_Challenge
             services.AddSingleton<IDbClient, DbClient>();
             services.AddTransient<IProductServices, ProductServices>();
 
-            services.AddMediatR(typeof(Startup));
-            services.AddTransient<GetAllProductsQueryHandler>();
-
+            services.AddMediatR(typeof(DbClient));
+          
             services.AddControllers();
 
             services.AddSwaggerGen(c =>

@@ -17,9 +17,5 @@
     <ProjectReference Include="..\Store.Core\Store.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="MedCore\Commands\" />
-  </ItemGroup>
-
 
 </Project>

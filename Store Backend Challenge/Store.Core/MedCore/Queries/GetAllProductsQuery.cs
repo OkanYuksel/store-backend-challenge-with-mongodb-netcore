@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Store.API.MedCore.Queries
+namespace Store.Core.MedCore.Queries
 {
     public class GetAllProductsQuery: IRequest<List<Product>>
     {

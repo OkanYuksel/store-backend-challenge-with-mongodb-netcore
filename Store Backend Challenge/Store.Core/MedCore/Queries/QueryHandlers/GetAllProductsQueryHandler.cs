@@ -6,14 +6,19 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Store.API.MedCore.Queries
+namespace Store.Core.MedCore.Queries
 {
     public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, List<Product>>
     {
+        private readonly IProductServices _productServices;
+        public GetAllProductsQueryHandler(IProductServices productServices)
+        {
+            _productServices = productServices;
+        }
+
         public Task<List<Product>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
         {
-            List<Product> productList = new List<Product>();
-            productList.Add(new Product { Id = Guid.NewGuid().ToString(), ProductName = "testProductName", UnitPrice = 11, UnitType = "KG" });
+            List<Product> productList = _productServices.GetProducts();
 
             return Task.FromResult(productList);
         }

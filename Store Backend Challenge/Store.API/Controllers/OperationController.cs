@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Store.API.MedCore.Queries;
 using Store.Core;
+using Store.Core.MedCore.Commands;
+using Store.Core.MedCore.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,11 +34,12 @@ namespace Store_Backend_Challenge.Controllers
         }
 
         [HttpGet("get-product-info")]
-        public ApiReturn<Product> GetProductInfo(string id)
+        public async Task<ApiReturn<Product>> GetProductInfoAsync(string id)
         {
             try
             {
-                Product product = _productServices.GetProduct(id);
+                GetProductInfoByIdQuery getProductInfoByIdQuery = new GetProductInfoByIdQuery { Id = id };
+                var product = await _mediator.Send(getProductInfoByIdQuery);
 
                 if (product == null)
                 {
@@ -71,13 +73,14 @@ namespace Store_Backend_Challenge.Controllers
             }
         }
 
-
         [HttpGet("get-product-list")]
-        public ApiReturn<List<Product>> GetProductList()
+        public async Task<ApiReturn<List<Product>>> GetProductListAsync()
         {
             try
             {
-                List<Product> productList = _productServices.GetProducts();
+                var query = new GetAllProductsQuery();
+
+                List<Product> productList = await _mediator.Send(query);
 
                 if (productList.Count == 0)
                 {
@@ -113,11 +116,12 @@ namespace Store_Backend_Challenge.Controllers
         }
 
         [HttpPost("insert-product")]
-        public ApiReturn<Product> InsertProduct(Product productRequest)
+        public async Task<ApiReturn<Product>> InsertProductAsync(Product productRequest)
         {
             try
             {
-                Product product = _productServices.AddProduct(productRequest);
+                InsertProductCommand getProductInfoByIdQuery = new InsertProductCommand { Product = productRequest };
+                var product = await _mediator.Send(getProductInfoByIdQuery);
 
                 if (product == null)
                 {
@@ -150,39 +154,6 @@ namespace Store_Backend_Challenge.Controllers
                  });
             }
         }
-
-        [HttpGet("get-product-list-test")]
-        public async Task<ApiReturn<List<Product>>> GetProductListTestAsync()
-        {
-            try
-            {
-
-                var query = new GetAllProductsQuery();
-
-                var result = await _mediator.Send(query);
-
-                return new ApiReturn<List<Product>>
-                {
-                    Data = result,
-                    Success = true,
-                    Code = ApiStatusCode.Success,
-                    Message = "Products are listed succesfully"
-                };
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(" Status Code " + ApiStatusCode.InternalServerError + " get-product-list-test method. Exception " + ex.ToString());
-                return Error<List<Product>>(new ApiErrorCollection
-                     { new ApiError
-                      {
-                        Code = ApiStatusCode.InternalServerError,
-                        InternalMessage = ex.StackTrace,
-                        Message = ex.Message
-                        }
-                 });
-            }
-        }
-
     }
 
 }
