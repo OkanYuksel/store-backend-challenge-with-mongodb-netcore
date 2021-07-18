@@ -13,6 +13,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
+using Store.API.MedCore.Queries;
 
 namespace Store_Backend_Challenge
 {
@@ -37,6 +39,9 @@ namespace Store_Backend_Challenge
 
             services.AddSingleton<IDbClient, DbClient>();
             services.AddTransient<IProductServices, ProductServices>();
+
+            services.AddMediatR(typeof(Startup));
+            services.AddTransient<GetAllProductsQueryHandler>();
 
             services.AddControllers();
 

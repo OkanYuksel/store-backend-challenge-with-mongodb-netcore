@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5zKdPJgFbQw0E3pIpcyYRmtutG/eVNn+AM+TdaX0w1MQNKYPth4gacl8qTQyaDLHdm85L7usLyjwVU4/v55h2A==",
+  "dgSpecHash": "R4seQqA0q/74aFH0oJX5CqQb8fd2U7G6RbSxB2qirQSfbWB9Pgt4s24WgV5QWhO52VbkT7i1lsRpIoZwpM8PWw==",
   "success": true,
   "projectFilePath": "C:\\Users\\OKAN\\source\\repos\\StoreBackendChallenge\\store-backend-challenge-with-mongodb-netcore\\Store Backend Challenge\\Store.Core\\Store.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OKAN\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
+    "C:\\Users\\OKAN\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\OKAN\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\OKAN\\.nuget\\packages\\microsoft.extensions.configuration\\3.0.0\\microsoft.extensions.configuration.3.0.0.nupkg.sha512",
     "C:\\Users\\OKAN\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.0.0\\microsoft.extensions.configuration.abstractions.3.0.0.nupkg.sha512",
     "C:\\Users\\OKAN\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.0.0\\microsoft.extensions.configuration.binder.3.0.0.nupkg.sha512",

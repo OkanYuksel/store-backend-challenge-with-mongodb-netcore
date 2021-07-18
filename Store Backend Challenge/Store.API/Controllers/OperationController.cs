@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Store.API.MedCore.Queries;
 using Store.Core;
 using System;
 using System.Collections.Generic;
@@ -16,8 +18,10 @@ namespace Store_Backend_Challenge.Controllers
     {
         private readonly ILogger<OperationController> _logger;
         private readonly IProductServices _productServices;
-        public OperationController(IProductServices productServices, ILogger<OperationController> logger)
+        private readonly IMediator _mediator;
+        public OperationController(IMediator mediator, IProductServices productServices, ILogger<OperationController> logger)
         {
+            _mediator = mediator;
             _logger = logger;
             _productServices = productServices;
         }
@@ -146,5 +150,39 @@ namespace Store_Backend_Challenge.Controllers
                  });
             }
         }
+
+        [HttpGet("get-product-list-test")]
+        public async Task<ApiReturn<List<Product>>> GetProductListTestAsync()
+        {
+            try
+            {
+
+                var query = new GetAllProductsQuery();
+
+                var result = await _mediator.Send(query);
+
+                return new ApiReturn<List<Product>>
+                {
+                    Data = result,
+                    Success = true,
+                    Code = ApiStatusCode.Success,
+                    Message = "Products are listed succesfully"
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(" Status Code " + ApiStatusCode.InternalServerError + " get-product-list-test method. Exception " + ex.ToString());
+                return Error<List<Product>>(new ApiErrorCollection
+                     { new ApiError
+                      {
+                        Code = ApiStatusCode.InternalServerError,
+                        InternalMessage = ex.StackTrace,
+                        Message = ex.Message
+                        }
+                 });
+            }
+        }
+
     }
+
 }
