@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Store.Core;
+using Store.Core.MedCore.Commands;
+using Store.Core.MedCore.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +15,15 @@ namespace Store_Backend_Challenge.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OperationController : ControllerBase
+    public class OperationController : BaseApiController
     {
+        private readonly ILogger<OperationController> _logger;
         private readonly IProductServices _productServices;
-        public OperationController(IProductServices productServices)
+        private readonly IMediator _mediator;
+        public OperationController(IMediator mediator, IProductServices productServices, ILogger<OperationController> logger)
         {
+            _mediator = mediator;
+            _logger = logger;
             _productServices = productServices;
         }
 
@@ -26,83 +34,126 @@ namespace Store_Backend_Challenge.Controllers
         }
 
         [HttpGet("get-product-info")]
-        public ApiReturn<Product> GetProductInfo(string id)
+        public async Task<ApiReturn<Product>> GetProductInfoAsync(string id)
         {
-            Product product = _productServices.GetProduct(id);
-
-            if (product == null)
+            try
             {
+                GetProductInfoByIdQuery getProductInfoByIdQuery = new GetProductInfoByIdQuery { Id = id };
+                var product = await _mediator.Send(getProductInfoByIdQuery);
+
+                if (product == null)
+                {
+                    return new ApiReturn<Product>
+                    {
+                        Success = false,
+                        Code = ApiStatusCode.NotFound,
+                        Message = "Product not found"
+                    };
+                }
+
                 return new ApiReturn<Product>
                 {
-                    Success = false,
-                    Code = ApiStatusCode.NotFound,
-                    Message = "Product not found"
+                    Data = product,
+                    Success = true,
+                    Code = ApiStatusCode.Success,
+                    Message = "Product is listed succesfully"
                 };
             }
-
-            return new ApiReturn<Product>
+            catch (Exception ex)
             {
-                Data = product,
-                Success = true,
-                Code = ApiStatusCode.Success,
-                Message = "Product is listed succesfully"
-            };
-
+                _logger.LogError(" Status Code " + ApiStatusCode.InternalServerError + " get-product-info method. Exception " + ex.ToString());
+                return Error<Product>(new ApiErrorCollection
+                     { new ApiError
+                      {
+                        Code = ApiStatusCode.InternalServerError,
+                        InternalMessage = ex.StackTrace,
+                        Message = ex.Message
+                        }
+                 });
+            }
         }
 
         [HttpGet("get-product-list")]
-        public ApiReturn<List<Product>> GetProductList()
+        public async Task<ApiReturn<List<Product>>> GetProductListAsync()
         {
-            List<Product> productList = _productServices.GetProducts();
-
-            if (productList.Count == 0)
+            try
             {
+                var query = new GetAllProductsQuery();
+
+                List<Product> productList = await _mediator.Send(query);
+
+                if (productList.Count == 0)
+                {
+                    return new ApiReturn<List<Product>>
+                    {
+                        Success = false,
+                        Code = ApiStatusCode.NotFound,
+                        Message = "No products found"
+                    };
+                }
+
                 return new ApiReturn<List<Product>>
                 {
-                    Success = false,
-                    Code = ApiStatusCode.NotFound,
-                    Message = "No products found"
+                    Data = productList,
+                    Success = true,
+                    Code = ApiStatusCode.Success,
+                    Message = "Products are listed succesfully"
                 };
+
             }
-
-            var resp = new ApiReturn<List<Product>>
+            catch (Exception ex)
             {
-                Data = productList,
-                Success = true,
-                Code = ApiStatusCode.Success,
-                Message = "Products are listed succesfully"
-            };
-
-            var address = JsonSerializer.Serialize(resp);
-
-            return resp;
+                _logger.LogError(" Status Code " + ApiStatusCode.InternalServerError + " get-product-list method. Exception " + ex.ToString());
+                return Error<List<Product>>(new ApiErrorCollection
+                     { new ApiError
+                      {
+                        Code = ApiStatusCode.InternalServerError,
+                        InternalMessage = ex.StackTrace,
+                        Message = ex.Message
+                        }
+                 });
+            }
         }
 
         [HttpPost("insert-product")]
-        public ApiReturn<Product> InsertProduct(Product productRequest)
+        public async Task<ApiReturn<Product>> InsertProductAsync(Product productRequest)
         {
-            Product product = _productServices.AddProduct(productRequest);
-
-            if (product == null)
+            try
             {
+                InsertProductCommand getProductInfoByIdQuery = new InsertProductCommand { Product = productRequest };
+                var product = await _mediator.Send(getProductInfoByIdQuery);
+
+                if (product == null)
+                {
+                    return new ApiReturn<Product>
+                    {
+                        Success = false,
+                        Code = ApiStatusCode.NotFound,
+                        Message = "Product not found"
+                    };
+                }
+
                 return new ApiReturn<Product>
                 {
-                    Success = false,
-                    Code = ApiStatusCode.NotFound,
-                    Message = "Product not found"
+                    Data = product,
+                    Success = true,
+                    Code = ApiStatusCode.Success,
+                    Message = "Product is listed succesfully"
                 };
             }
-
-            return new ApiReturn<Product>
+            catch (Exception ex)
             {
-                Data = product,
-                Success = true,
-                Code = ApiStatusCode.Success,
-                Message = "Product is listed succesfully"
-            };
+                _logger.LogError(" Status Code " + ApiStatusCode.InternalServerError + " insert-product method. Exception " + ex.ToString());
+                return Error<Product>(new ApiErrorCollection
+                     { new ApiError
+                      {
+                        Code = ApiStatusCode.InternalServerError,
+                        InternalMessage = ex.StackTrace,
+                        Message = ex.Message
+                        }
+                 });
+            }
         }
-
     }
-
 
 }

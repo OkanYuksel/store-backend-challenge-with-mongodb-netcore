@@ -174,3 +174,9 @@ C:\Users\OKAN\source\repos\StoreBackendChallenge\store-backend-challenge-with-mo
 C:\Users\OKAN\source\repos\StoreBackendChallenge\store-backend-challenge-with-mongodb-netcore\Store Backend Challenge\Store.API\obj\Debug\netcoreapp3.1\Store.API.dll
 C:\Users\OKAN\source\repos\StoreBackendChallenge\store-backend-challenge-with-mongodb-netcore\Store Backend Challenge\Store.API\obj\Debug\netcoreapp3.1\Store.API.pdb
 C:\Users\OKAN\source\repos\StoreBackendChallenge\store-backend-challenge-with-mongodb-netcore\Store Backend Challenge\Store.API\obj\Debug\netcoreapp3.1\Store.API.genruntimeconfig.cache
+C:\Users\OKAN\source\repos\StoreBackendChallenge\store-backend-challenge-with-mongodb-netcore\Store Backend Challenge\Store.API\bin\Debug\netcoreapp3.1\NLog.config
+C:\Users\OKAN\source\repos\StoreBackendChallenge\store-backend-challenge-with-mongodb-netcore\Store Backend Challenge\Store.API\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Users\OKAN\source\repos\StoreBackendChallenge\store-backend-challenge-with-mongodb-netcore\Store Backend Challenge\Store.API\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Users\OKAN\source\repos\StoreBackendChallenge\store-backend-challenge-with-mongodb-netcore\Store Backend Challenge\Store.API\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+C:\Users\OKAN\source\repos\StoreBackendChallenge\store-backend-challenge-with-mongodb-netcore\Store Backend Challenge\Store.API\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\OKAN\source\repos\StoreBackendChallenge\store-backend-challenge-with-mongodb-netcore\Store Backend Challenge\Store.API\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
